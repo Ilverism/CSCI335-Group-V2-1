@@ -1,3 +1,8 @@
+
+This project is a modified version of the codebase at the link below:\
+https://github.com/amrhero108/Flag-Detection-using-YOLOV7?utm_source=chatgpt.com
+
+
 # Flag Detection with YOLOv7
 
 ## Overview
@@ -38,11 +43,18 @@ Follow these steps to get started with the flag detection project:
    Modify configuration files (`./data/custom.yaml`, `./models/yolov7-custom.cfg`) to match your dataset and requirements.
 
 5. **Training:**
-   ```bash
-   python train.py --workers 1 --device 0 --batch-size 8 --epochs 150 --data data/data.yaml --img 640 640 --cfg cfg/training/yolov7-tiny.yaml --weights yolov7 tiny.pt --name yolov7finaly --hyp data/hyp.scratch.p5.yaml
-   ```
+
+    ~~python train.py --workers 1 --device 0 --batch-size 8 --epochs 150 --data data/data.yaml --img 640 640 --cfg cfg/training/yolov7-tiny.yaml --weights yolov7 tiny.pt --name yolov7finaly --hyp data/hyp.scratch.p5.yaml~~
+
+    ```bash
+    python train.py --workers 1 --device 0 --batch-size 8 --epochs 150 --data data/data.yaml --img 640 640 --cfg cfg/training/yolov7-tiny.yaml --weights yolov7-tiny.pt --name yolov7finaly --hyp data/hyp.scratch.p5.yaml
+    ```
+
 
 6. **Inference:**
+   
+   ~~python detect.py --weights best.pt --img-size 640 --conf 0.4 --source data/test/images --view-img --no-trace~~
+
    ```bash
-   python detect.py --weights best.pt --img-size 640 --conf 0.4 --source data/test/images --view-img --no-trace
+   python detect.py --weights best.pt --img-size 640 --conf 0.4 --source test/images --view-img --no-trace
    ```
